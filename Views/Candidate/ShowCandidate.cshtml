@@ -1,0 +1,33 @@
+﻿<div ng-controller="InsertCandidateController">
+    <div class="container" ng-init="init()">
+        <h3>ข้อมูล Candidate</h3>
+        <div class="form-group">
+            <label>Email address</label>
+            <input type="text" class="form-control" ng-model="registerForm.email" id="" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <label for="">Fullname</label>
+            <input type="text" class="form-control" ng-model="registerForm.fullname" placeholder="Fullname">
+        </div>
+        <div class="form-group">
+            <label for="">Experience</label>
+            <input type="text" class="form-control" ng-model="registerForm.experience" placeholder="Experience">
+        </div>
+        <div class="form-group">
+            <label for="">Age</label>
+            <input type="text" class="form-control" ng-model="registerForm.age" placeholder="Age">
+        </div>
+        <div class="form-group">
+            <label>Computer Language</label>
+            <select class="form-control" ng-model="registerForm.computer_lang" id="">
+                <option value="" disabled selected hidden>กรุณาเลือก</option>
+                <option ng-repeat="sk in com_lang" value="{{sk.computer_lang_name}}">{{sk.computer_lang_name}}</option>
+            </select>
+        </div>
+        <button class="btn btn-default" ng-click="sendData(registerForm)">ส่งข้อมูล</button>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/InsertCandidateController.js"></script>
+}
